@@ -5,7 +5,7 @@
 
 
 meta 'file' do
-  ORIGINS = [:content, :render, :source, :gist]
+  ORIGINS = [:content, :url, :source, :render]
   ORIGINS.each{|o| accepts_value_for o}
 
   template {

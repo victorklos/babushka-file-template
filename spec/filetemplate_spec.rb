@@ -8,7 +8,7 @@ describe 'babushka file template' do
 
   it 'requires exactly a single origin' do
     Dep('no origin.file').met?.must_be_nil
-    Dep('both gist and source.file').met?.must_be_nil
+    Dep('both url and source.file').met?.must_be_nil
     Dep('both content and render.file').met?.must_be_nil
   end
 

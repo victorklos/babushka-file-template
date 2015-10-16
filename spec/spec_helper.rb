@@ -18,9 +18,9 @@ end
 dep 'no origin.file' do
 end
 
-dep 'both gist and source.file' do
+dep 'both url and source.file' do
   source "/tmp/tralala"
-  gist "at hithub somewhere"
+  url "somewhere at the interweb"
 end
 
 dep 'both content and render.file' do
@@ -30,9 +30,5 @@ end
 
 dep '|tmp|ftt_content.txt.file' do
   content "Howdy!"
-end
-
-dep '|tmp|ftt_gist.file' do
-  gist "https://gist.github.com/victorklos/5e0d5d5c79465e2d7587"
 end
 
