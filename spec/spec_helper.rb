@@ -32,3 +32,7 @@ dep '|tmp|ftt_content.txt.file' do
   content "Howdy!"
 end
 
+dep '|tmp|ftt_url.txt.file' do
+  url "https://gist.githubusercontent.com/victorklos/5e0d5d5c79465e2d7587/raw/8b745706d85f84d9806ab3c918e6a3e0ed06d2b3/somegist.txt"
+end
+

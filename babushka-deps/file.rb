@@ -20,6 +20,10 @@ meta 'file' do
       File.open(filename, 'wb') { |file| file.write content }
     end
 
+    def create_with_url
+      shell "curl #{url} > #{filename}"
+    end
+
     met? {
       if supplied.length != 1
         raise ArgumentError, "Specify exactly one of [#{ORIGINS.join(', ')}]"

@@ -13,17 +13,18 @@ describe 'babushka file template' do
   end
 
   describe 'supported origins' do
-    it 'include content' do
+    it 'includes content' do
       Dep('|tmp|ftt_content.txt.file').meet.must_equal true
-      `cat /tmp/ftt_content.txt`.must_equal "Howdy!"
+      "/tmp/ftt_content.txt".p.read.must_equal "Howdy!"
     end
-    it 'include url' do
+    it 'includes url' do
+      Dep('|tmp|ftt_url.txt.file').meet.must_equal true
+      "/tmp/ftt_url.txt".p.read.must_equal "Babushka rules!\nMultiline no less..."
+    end
+    it 'includes source' do
       skip
     end
-    it 'include source' do
-      skip
-    end
-    it 'include render' do
+    it 'includes render' do
       skip
     end
   end
