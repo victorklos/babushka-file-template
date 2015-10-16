@@ -15,13 +15,20 @@ meta 'file' do
     def supplied
       ORIGINS.select{|e|!send(e).nil?}
     end
+    def invoke_curl src, file
+      shell "curl #{src} > #{file}"
+    end
 
     def create_with_content
       File.open(filename, 'wb') { |file| file.write content }
     end
 
     def create_with_url
-      shell "curl #{url} > #{filename}"
+      invoke_curl url, filename
+    end
+
+    def create_with_source
+      invoke_curl "file://#{source.p}", filename
     end
 
     met? {

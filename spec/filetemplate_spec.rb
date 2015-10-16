@@ -22,7 +22,8 @@ describe 'babushka file template' do
       "/tmp/ftt_url.txt".p.read.must_equal "Babushka rules!\nMultiline no less..."
     end
     it 'includes source' do
-      skip
+      Dep('|tmp|ftt_source.txt.file').meet.must_equal true
+      "/tmp/ftt_source.txt".p.read.must_equal "Hambadieham\n"
     end
     it 'includes render' do
       skip
