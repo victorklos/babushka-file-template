@@ -4,7 +4,7 @@ begin
   Rake::TestTask.new do |t|
       t.pattern = "spec/*_spec.rb"
   end
-  task :default => :spec
+  task :default => :test
 rescue LoadError
   # no minitest
 end
